@@ -17,13 +17,31 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8">
-          <NavLink to="/"><li>Home</li></NavLink>
-          <NavLink to="/updateProfile"><li>Update Profile</li></NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+            Home
+          </NavLink>
+          <NavLink
+           to="/updateProfile"
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+            Update Profile
+            </NavLink>
+            <NavLink
+           to="/login"
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+            Login
+            </NavLink>
+            <NavLink
+           to="/register"
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+            Register
+            </NavLink>
 
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login"><button className="btn">Log in</button></Link>
+       <Link to="login"><button className="btn">Log in</button></Link>
       </div>
     </div>
   );
