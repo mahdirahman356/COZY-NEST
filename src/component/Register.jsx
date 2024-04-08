@@ -1,14 +1,33 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/Context";
+
 
 const Register = () => {
+
+    let {createUser} = useContext(AuthContext)
 
     let handleRegister =(e) => {
         e.preventDefault()
         let from = new FormData(e.currentTarget)
         let email = from.get('email')
         let password = from.get('password')
-        console.log(email,password)
+        // console.log(email,password)
+        createUser(email,password)
+        .then((result) => {
+            let authUser = result.user
+            console.log(authUser)
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage)
+          });
     }
+
+    
+
+
+        
     return (
         <div>
             <div className="flex flex-col md:flex-row justify-center items-center">
@@ -19,13 +38,8 @@ const Register = () => {
           <input type="text" name="name" placeholder="Your Name" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" required />
           <input type="text" name="photoURL" placeholder="Photo URL" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" required />
           <input type="email" name="email" placeholder="Email" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" required />
-        
-        
-          
           <input type="password" name="password" placeholder="password" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2" required />
-          <label className="label">
-          </label>
-          <input className="btn mt-2 bg-[steelblue] text-white w-full" type="submit" value="Login" />
+          <input className="btn mt-2 bg-[#64ade8] text-white w-full" type="submit" value="Login" />
          
         
          

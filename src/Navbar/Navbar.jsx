@@ -19,22 +19,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-8">
           <NavLink
             to="/"
-            className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+            className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
             Home
           </NavLink>
           <NavLink
            to="/updateProfile"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
             Update Profile
             </NavLink>
             <NavLink
            to="/login"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
             Login
             </NavLink>
             <NavLink
            to="/register"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold text-gray-400'}>
+           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
             Register
             </NavLink>
 
