@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa6";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Context";
 
 const Navbar = () => {
+  let {user} = useContext(AuthContext)
   return (
     <div className="navbar bg-base-100 md:mt-4">
       <div className="navbar-start">
@@ -19,29 +23,40 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-8">
           <NavLink
             to="/"
-            className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
             Home
           </NavLink>
           <NavLink
            to="/updateProfile"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
+           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
             Update Profile
             </NavLink>
             <NavLink
            to="/login"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
+           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
             Login
             </NavLink>
             <NavLink
            to="/register"
-           className={({ isActive }) => isActive ? "text-[steelblue] font-semibold": 'font-semibold '}>
+           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
             Register
             </NavLink>
-
         </ul>
       </div>
       <div className="navbar-end">
-       <Link to="login"><button className="btn">Log in</button></Link>
+
+      {
+        user ? <div className="w-10 rounded-full">
+        <img className="rounded-full" alt="Tailwind CSS Navbar component" src={user.photoURL} />
+      </div>
+      :<div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
+      <FaRegUser className="text-[22px] text-gray-600"/>
+        </div>
+      }  
+      
+      
+
+       <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
       </div>
     </div>
   );
