@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import PropTypes from 'prop-types'; // ES6
 import { createContext, useEffect, useState } from "react";
 import auth from '../firebase/firebase';
+import { signOut } from 'firebase/auth/cordova';
 
 
 export let AuthContext = createContext()
@@ -12,6 +13,9 @@ const Context = ({children}) => {
     }
     let loginUser =(email,password) => {
         return signInWithEmailAndPassword(auth,email,password)
+    }
+    let logOutUser = () => {
+        return signOut(auth)
     }
 
     useEffect(()=>{
@@ -24,7 +28,7 @@ const Context = ({children}) => {
      }
     },[])
 
-    let authInfo = {user, createUser, loginUser}
+    let authInfo = {user, createUser, loginUser, logOutUser}
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

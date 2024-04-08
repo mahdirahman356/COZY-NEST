@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/Context";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Login = () => {
     let {loginUser} = useContext(AuthContext)
@@ -20,9 +22,12 @@ const Login = () => {
         console.log(email,password)
         loginUser(email,password)
         .then(result => {
+            e.target.reset()
+            toast.success("User successfully logged in")
             console.log(result.user)
         })
         .catch(error => {
+            toast.error("Your account is not available")
             console.log(error.massage)
         })
     }
@@ -60,14 +65,12 @@ const Login = () => {
           <label className="label">
           </label>
           <input className="btn mt-2 bg-[#64ade8] text-white w-full" type="submit" value="Login" />
-         
-        
-         
+         <Toaster />
           <p className="text-[14px] mt-3 font-semibold text-center">Dont’t Have An Account ? <Link to="/register" className="text-blue-600 underline">Register</Link></p>
       </form>
       <div>
-      <button onClick={handleLoginWitnGoogle} className="btn mt-3 w-full"><FcGoogle className="text-[22px]"/> Login With Google</button>
-      <button onClick={handleLoginWithGithub} className="btn mt-3 w-full"><FaGithub className="text-[22px]"/> Login With Github</button>
+      <button onClick={handleLoginWitnGoogle} className="btn w-full mb-3"><FcGoogle className="text-[30px]"/> Login With Google</button>
+      <button onClick={handleLoginWithGithub} className="btn w-full"><span><FaGithub className="text-[30px] inline "/></span> Login With Github</button>
       </div>
     </div>
 

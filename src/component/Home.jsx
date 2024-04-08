@@ -3,9 +3,14 @@ import slider1 from '../assets/Image/slider-1.avif'
 import slider2 from '../assets/Image/slider-2.avif'
 import slider3 from '../assets/Image/slider-3.avif'
 import slider4 from '../assets/Image/slider-4.avif'
+import Categorys from './Categorys'
+import {useLoaderData} from "react-router-dom";
+
 const Home = () => {
+  let categorys = useLoaderData();
     return (
-        <div className="hero mt-3 md:mt-9 md:h-[80vh] rounded-3xl" style={{backgroundImage: `url(${HeroImage})`}}>
+      <div>
+         <div className="hero mt-3 md:mt-9 rounded-3xl" style={{backgroundImage: `url(${HeroImage})`}}>
   <div className="hero-overlay bg-opacity-50 rounded-3xl"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="flex flex-col md:flex-row items-center justify-between">
@@ -33,7 +38,21 @@ const Home = () => {
     
      </div>
   </div>
+
 </div>
+    <div className='text-center mt-24'>
+      <p className='text-3xl font-bold mb-2'>Find Your Dream Home</p>
+      <p>Discover a variety of residential properties, from cozy homes to modern apartments. </p>
+    </div>
+   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 my-10'>
+   {
+      categorys.map((categorys, index) =>
+     <Categorys key={index}
+     categorys={categorys}
+     ></Categorys>)
+     }
+   </div>
+      </div>
         
     );
 };

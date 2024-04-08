@@ -4,7 +4,16 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/Context";
 
 const Navbar = () => {
-  let {user} = useContext(AuthContext)
+  let { user, logOutUser } = useContext(AuthContext)
+  let handleLogout = () => {
+    logOutUser()
+    .then(()=> {
+      console.log("Log Out successfully")
+    }) 
+    .catch((error) => {
+      console.log(error.massage)
+    });
+  }
   return (
     <div className="navbar bg-base-100 md:mt-4">
       <div className="navbar-start">
@@ -23,40 +32,46 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-8">
           <NavLink
             to="/"
-            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
             Home
           </NavLink>
           <NavLink
-           to="/updateProfile"
-           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
+            to="/updateProfile"
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
             Update Profile
-            </NavLink>
-            <NavLink
-           to="/login"
-           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
+          </NavLink>
+          <NavLink
+            to="/login"
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
             Login
-            </NavLink>
-            <NavLink
-           to="/register"
-           className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold": 'font-semibold '}>
+          </NavLink>
+          <NavLink
+            to="/register"
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
             Register
-            </NavLink>
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
 
-      {
-        user ? <div className="w-10 rounded-full">
-        <img className="rounded-full" alt="Tailwind CSS Navbar component" src={user.photoURL} />
-      </div>
-      :<div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
-      <FaRegUser className="text-[22px] text-gray-600"/>
-        </div>
-      }  
-      
-      
-
-       <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
+        {
+          user ? <>
+          <div className="w-10 rounded-full dropdown dropdown-hover">
+            <img className="rounded-full" src={user.photoURL} />
+            <div tabIndex={0} role="button" className=" m-1"></div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-52 bg-gray-300">
+              <li><a>{user.displayName}</a></li>
+            </ul>
+          </div>
+          <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
+          </>
+            : <>
+            <div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
+              <FaRegUser className="text-[22px] text-gray-600" />
+            </div>
+            <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
+            </>
+        }
       </div>
     </div>
   );
