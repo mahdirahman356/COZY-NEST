@@ -9,7 +9,7 @@ const CategorysDetails = () => {
     let allDetails = cetaDetails.find(cetaDetails => cetaDetails.id === idParse)
     let { estate_title, area, facilities, description, location, segment_name, img, price, status } = allDetails
     return (
-        <div className="hero my-24">
+        <div className="hero my-10 md:my-24">
             <Helmet>
                 <title>CozyNest | Estate</title>
             </Helmet>

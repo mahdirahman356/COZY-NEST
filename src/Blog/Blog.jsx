@@ -5,7 +5,7 @@ const Blog = () => {
     let blogs =   useLoaderData();
     console.log(blogs)
     return (
-        <div className="my-20">
+        <div className="my-3 md:my-20">
             {blogs.map((blogs,index) => <div key={index} className="dark:text-gray-800 mb-6 animate__animated animate__slideInUp">
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-100">
                     <div className="flex items-center justify-between">

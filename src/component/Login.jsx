@@ -60,7 +60,7 @@ const Login = () => {
             <Helmet>
                 <title>CozyNest | Login</title>
             </Helmet>
-      <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
+      <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-5 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Login Your Accout</h3>
 
