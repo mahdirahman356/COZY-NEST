@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
@@ -8,20 +9,20 @@ import auth from "../firebase/firebase";
 import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from "react-helmet-async";
 import 'animate.css';
+import { useForm} from "react-hook-form"
 
 
 const Login = () => {
     let {loginUser} = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm()
 
-
-    let handleLogIn =(e) => {
-        e.preventDefault()
-        let from = new FormData(e.currentTarget)
-        let email = from.get('email')
-        let password = from.get('password')
-        console.log(email,password)
+      const onSubmit  = (data,e) => {
+        console.log(data)
+        let {email,password} = data
         loginUser(email,password)
         .then(result => {
             e.target.reset()
@@ -32,8 +33,9 @@ const Login = () => {
             toast.error("Your account is not available")
             console.log(error.massage)
         })
-    }
-
+      }
+      const googleProvider = new GoogleAuthProvider();
+      const githubProvider = new GithubAuthProvider();
     let handleLoginWitnGoogle = () =>{
         signInWithPopup(auth,googleProvider)
         .then(result => {
@@ -58,15 +60,14 @@ const Login = () => {
             <Helmet>
                 <title>CozyNest | Login</title>
             </Helmet>
-      <form onSubmit={handleLogIn} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
+      <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Login Your Accout</h3>
 
-          <input type="email" name="email" placeholder="Email" className="  rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" required />
-        
-        
-          
-          <input type="password" name="password" placeholder="password" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2" required />
+          <input type="email"  name="email" placeholder="Email" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2" {...register("email", { required: true })} />  
+          {errors.email && <span className="text-red-500 text-[13px]">This field is required</span>}
+          <input type="password" name="password" placeholder="password" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2 mt-5" {...register("password", { required: true })}/>
+          {errors.password && <span className="text-red-500 text-[13px]">This field is required</span>}
           <label className="label">
           </label>
           <input className="btn mt-2 bg-[#64ade8] text-white w-full" type="submit" value="Login" />

@@ -7,12 +7,12 @@ const Navbar = () => {
   let { user, logOutUser } = useContext(AuthContext)
   let handleLogout = () => {
     logOutUser()
-    .then(()=> {
-      console.log("Log Out successfully")
-    }) 
-    .catch((error) => {
-      console.log(error.massage)
-    });
+      .then(() => {
+        console.log("Log Out successfully")
+      })
+      .catch((error) => {
+        console.log(error.massage)
+      });
   }
   return (
     <div className="navbar bg-base-100 md:mt-4">
@@ -61,20 +61,21 @@ const Navbar = () => {
 
         {
           user ? <>
-          <div className="w-10 h-10 rounded-full flex justify-center items-center dropdown dropdown-hover">
-            <img className="rounded-full" src={user.photoURL} />
-            <div tabIndex={0} role="button" className=" m-1"></div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-52 bg-gray-300">
-              <li><a>{user.displayName}</a></li>
-            </ul>
-          </div>
-          <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
+            <div className="w-10 h-10 rounded-full flex justify-center items-center dropdown dropdown-hover">
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0}> <img className="rounded-full" src={user.photoURL} /></div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a>{user.displayName}</a></li>
+                </ul>
+              </div>
+            </div>
+            <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
           </>
             : <>
-            <div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
-              <FaRegUser className="text-[22px] text-gray-600" />
-            </div>
-            <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
+              <div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
+                <FaRegUser className="text-[22px] text-gray-600" />
+              </div>
+              <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
             </>
         }
       </div>
