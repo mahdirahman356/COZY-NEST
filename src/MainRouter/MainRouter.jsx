@@ -10,7 +10,7 @@ const MainRouter = () => {
             </div>
             <Footer></Footer>
         </div>
-    );
-};
+    )
+}
 
 export default MainRouter;

@@ -26,7 +26,7 @@ const Navbar = () => {
             <li><a>Update Profile</a></li>
           </ul>
         </div>
-        <a className="text-xl md:text-4xl font-bold ml-2">CozyNest</a>
+        <a className="text-xl md:text-3xl font-bold ml-2">CozyNest</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8">
