@@ -2,6 +2,7 @@ import { useContext} from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/Context";
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -42,6 +43,9 @@ const Register = () => {
     
     return (
         <div>
+            <Helmet>
+                <title>CozyNest | Register</title>
+            </Helmet>
             <div className="flex flex-col md:flex-row justify-center items-center">
       <form onSubmit={handleRegister} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200">
            

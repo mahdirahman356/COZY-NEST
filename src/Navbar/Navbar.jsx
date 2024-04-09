@@ -50,6 +50,11 @@ const Navbar = () => {
             className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
             Register
           </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => isActive ? "text-[#6eb8f5] font-semibold" : 'font-semibold '}>
+            Blogs
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">

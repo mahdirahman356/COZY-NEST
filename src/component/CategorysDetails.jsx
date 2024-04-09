@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const CategorysDetails = () => {
     let cetaDetails = useLoaderData();
@@ -9,6 +10,9 @@ const CategorysDetails = () => {
     let { estate_title, area, facilities, description, location, segment_name, img, price, status } = allDetails
     return (
         <div className="hero my-24">
+            <Helmet>
+                <title>CozyNest | Estate</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row">
                 <img src={img} className="md:max-w-2xl rounded-lg shadow-2xl" />
                 <div className="">

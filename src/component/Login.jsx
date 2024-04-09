@@ -6,6 +6,7 @@ import { AuthContext } from "../Context/Context";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase";
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -53,6 +54,9 @@ const Login = () => {
     }
     return (
         <div className="flex flex-col md:flex-row justify-center items-center">
+            <Helmet>
+                <title>CozyNest | Login</title>
+            </Helmet>
       <form onSubmit={handleLogIn} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Login Your Accout</h3>

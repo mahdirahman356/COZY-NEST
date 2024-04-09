@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import HeroImage from '../assets/Image/hero.webp' 
 import slider1 from '../assets/Image/slider-1.avif'
 import slider2 from '../assets/Image/slider-2.avif'
@@ -10,6 +11,9 @@ const Home = () => {
   let categorys = useLoaderData();
     return (
       <div>
+        <Helmet>
+        <title>CozyNest</title>
+        </Helmet>
          <div className="hero mt-3 md:mt-9 rounded-3xl" style={{backgroundImage: `url(${HeroImage})`}}>
   <div className="hero-overlay bg-opacity-50 rounded-3xl"></div>
   <div className="hero-content text-center text-neutral-content">

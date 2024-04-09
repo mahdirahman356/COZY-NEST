@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "title": "The Ultimate Guide to Real Estate Investment",
+      "author": "Jane Smith",
+      "date": "2024-04-09",
+      "content": "In this guide, we'll explore the ins and outs of real estate investment, covering everything from residential properties to commercial spaces. Whether you're a seasoned investor or just starting out, you'll find valuable insights to help you make informed decisions.",
+      "image": "https://i.ibb.co/Hqx2hYC/author-1.jpg",
+      "tags": ["Real Estate", "Investment", "Tips"]
+    },
+    {
+      "id": 2,
+      "title": "10 Essential Factors to Consider When Buying a Home",
+      "author": "John Doe",
+      "date": "2024-04-08",
+      "content": "Buying a home is a significant decision, and there are several factors to consider before making your purchase. From location and amenities to budget and future potential, we'll cover the essential aspects to ensure you find the perfect home for your needs.",
+      "image": "https://i.ibb.co/JrvgKQ1/author-2.jpg",
+      "tags": ["Homebuying", "Tips", "Real Estate"]
+    },
+    {
+      "id": 3,
+      "title": "Interior Design Trends for Modern Homes",
+      "author": "Emily Johnson",
+      "date": "2024-04-07",
+      "content": "Discover the latest interior design trends shaping modern homes. From minimalist aesthetics to eco-friendly solutions, we'll explore how to transform your space into a stylish and functional sanctuary.",
+      "image": "https://i.ibb.co/R6dhxD8/author-3.jpg",
+      "tags": ["Interior Design", "Trends", "Home Decor"]
+    },
+    {
+      "id": 4,
+      "title": "Navigating the Real Estate Market: Tips for Buyers and Sellers",
+      "author": "Mark Thompson",
+      "date": "2024-04-06",
+      "content": "The real estate market can be complex, but with the right guidance, both buyers and sellers can navigate it successfully. In this article, we'll share valuable tips and strategies to help you achieve your goals in today's market.",
+      "image": "https://i.ibb.co/Qfd4Yyj/author-4.jpg",
+      "tags": ["Real Estate", "Market", "Tips"]
+    },
+    {
+      "id": 5,
+      "title": "The Benefits of Investing in Vacation Rental Properties",
+      "author": "Sarah Adams",
+      "date": "2024-04-05",
+      "content": "Explore the lucrative opportunities of investing in vacation rental properties. From generating passive income to enjoying personal vacation getaways, we'll delve into the numerous benefits that come with owning vacation rental properties.",
+      "image": "https://i.ibb.co/tqnh3LK/author-5.jpg",
+      "tags": ["Real Estate", "Investment", "Vacation Rentals"]
+    },
+    {
+      "id": 6,
+      "title": "Effective Project Management Strategies for Success",
+      "author": "Michael Brown",
+      "date": "2024-04-04",
+      "content": "Project management is crucial for ensuring the success of any endeavor. In this comprehensive guide, we'll discuss proven strategies and best practices to streamline project workflows, maximize efficiency, and achieve desired outcomes.",
+      "image": "https://i.ibb.co/GJXpCDQ/author-6.jpg",
+      "tags": ["Project Management", "Strategies", "Success"]
+    }
+  ]
+  

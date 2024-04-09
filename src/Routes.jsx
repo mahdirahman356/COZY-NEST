@@ -6,11 +6,14 @@ import UpdateProfile from "./component/UpdateProfile";
 import Register from "./component/Register";
 import CategorysDetails from "./component/CategorysDetails";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Error from "./ErrorRoute/Error";
+import Blog from "./Blog/Blog";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainRouter></MainRouter>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
@@ -35,6 +38,11 @@ const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <CategorysDetails></CategorysDetails>
                  </PrivetRoute>
+            },
+            {
+                path: "/blog",
+                loader: () => fetch("/Blogdata.json"),
+                element: <Blog></Blog>
             }
         ]
     },
