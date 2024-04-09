@@ -61,14 +61,12 @@ const Navbar = () => {
 
         {
           user ? <>
-            <div className="w-10 h-10 rounded-full flex justify-center items-center dropdown dropdown-hover">
-              <div className="dropdown dropdown-hover">
-                <div tabIndex={0}> <img className="rounded-full" src={user.photoURL} /></div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <div className="dropdown dropdown-hover w-10 h-10 rounded-full flex justify-center items-center"> 
+                 <img tabIndex={0} className="rounded-full" src={user.photoURL} />
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box mt-24 w-52">
                   <li><a>{user.displayName}</a></li>
                 </ul>
-              </div>
-            </div>
+                </div>
             <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
           </>
             : <>
