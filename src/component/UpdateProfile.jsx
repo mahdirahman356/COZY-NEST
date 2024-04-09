@@ -1,9 +1,18 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Context/Context";
-
+import { updateProfile } from "firebase/auth";
+import userImg from '../assets/Image/user-img.png'
 const UpdateProfile = () => {
     let {user} = useContext(AuthContext)
+
+    let  handleUPdateProfile = (e) => {
+    e.preventDefault()
+    let name = e.target.name.value
+    let PhotoURL = e.target.PhotoURL.value
+    console.log(name,PhotoURL)
+    updateProfile(user,{displayName : name, photoURL : PhotoURL })
+    }
     return (
         <div>
             <Helmet>
@@ -11,7 +20,7 @@ const UpdateProfile = () => {
             </Helmet>
             <div className="max-w-xs md:w-[80%] mx-auto">
             <div className="flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 mt-12">
-                <img src={user.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                <img src={user.photoURL ? user.photoURL : userImg} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
                         <h2 className="text-xl font-semibold sm:text-2xl">{user.displayName}</h2>
@@ -44,9 +53,9 @@ const UpdateProfile = () => {
             <div className="my-12">
                 <p className="text-xl font-semibold text-center">Edit Profile</p>
                 <div className="mt-8">
-                <form>
-                <input type="text" placeholder="Name" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2 " />
-                <input type="text" placeholder="Photo URL" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2 mt-5" />
+                <form onSubmit={handleUPdateProfile}>
+                <input type="text" placeholder="Name" name="name" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2 " />
+                <input type="text" placeholder="Photo URL" name="PhotoURL" className=" rounded-none border-b-[1px] border-gray-300 w-full pb-2 mt-5" />
                 <input type="submit" className="btn mt-9 w-full bg-[#64ade8] text-white" value="Save" />
                 </form>
                 </div>

@@ -1,8 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
-import { FaRegUser } from "react-icons/fa6";
+import { Link, NavLink} from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Context";
-
+import userImg from "../assets/Image/user-img.png"
 const Navbar = () => {
   let { user, logOutUser } = useContext(AuthContext)
   let handleLogout = () => {
@@ -62,7 +61,7 @@ const Navbar = () => {
         {
           user ? <>
             <div className="dropdown dropdown-hover w-10 h-10 rounded-full flex justify-center items-center"> 
-                 <img tabIndex={0} className="rounded-full" src={user.photoURL} />
+                 <img tabIndex={0} className="rounded-full bg-gray-200" src={user.photoURL ? user.photoURL : userImg} />
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box mt-24 w-52">
                   <li><a>{user.displayName}</a></li>
                 </ul>
@@ -70,9 +69,6 @@ const Navbar = () => {
             <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
           </>
             : <>
-              <div className="w-10 h-10 rounded-full bg-slate-300 flex justify-center items-center">
-                <FaRegUser className="text-[22px] text-gray-600" />
-              </div>
               <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
             </>
         }
