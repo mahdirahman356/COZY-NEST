@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Categorys = ({ categorys }) => {
     let {id,estate_title,cardDecription, segment_name, img, price, status} = categorys
     return (
-        <div className=''>
+        <div className='' data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             <div className="card  bg-base-100 shadow-xl">
                 <figure className="px-4 pt-7">
                     <img className='rounded-xl' src={img} />

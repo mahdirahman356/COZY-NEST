@@ -7,6 +7,7 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebas
 import auth from "../firebase/firebase";
 import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from "react-helmet-async";
+import 'animate.css';
 
 
 const Login = () => {
@@ -57,7 +58,7 @@ const Login = () => {
             <Helmet>
                 <title>CozyNest | Login</title>
             </Helmet>
-      <form onSubmit={handleLogIn} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200">
+      <form onSubmit={handleLogIn} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Login Your Accout</h3>
 
@@ -72,7 +73,7 @@ const Login = () => {
          <Toaster />
           <p className="text-[14px] mt-3 font-semibold text-center">Dont’t Have An Account ? <Link to="/register" className="text-blue-600 underline">Register</Link></p>
       </form>
-      <div>
+      <div className="animate__animated animate__slideInRight">
       <button onClick={handleLoginWitnGoogle} className="btn w-full mb-3"><FcGoogle className="text-[30px]"/> Login With Google</button>
       <button onClick={handleLoginWithGithub} className="btn w-full"><span><FaGithub className="text-[30px] inline "/></span> Login With Github</button>
       </div>

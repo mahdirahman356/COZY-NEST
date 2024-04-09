@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Helmet } from "react-helmet-async";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
+import 'animate.css';
 
 
 const Register = () => {
@@ -48,7 +49,7 @@ const Register = () => {
                 <title>CozyNest | Register</title>
             </Helmet>
             <div className="flex flex-col md:flex-row justify-center items-center">
-      <form onSubmit={handleRegister} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200">
+      <form onSubmit={handleRegister} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-10 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInUp">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Create Your Accout</h3>
 
