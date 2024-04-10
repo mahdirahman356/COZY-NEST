@@ -12,6 +12,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Context>
       <RouterProvider router={router} />
     </Context>
-  </React.StrictMode>,
+  </React.StrictMode>
   </HelmetProvider>
 )

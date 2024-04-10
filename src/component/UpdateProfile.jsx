@@ -20,7 +20,7 @@ const UpdateProfile = () => {
                 <title>CozyNest | UpdateProfile</title>
             </Helmet>
             <div className="max-w-xs md:w-[80%] mx-auto">
-            <div className="flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 mt-3 md:mt-12 animate__animated animate__slideInLeft">
+            <div className=" flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 mt-3 md:mt-12 animate__animated animate__slideInLeft">
                 <img src={user.photoURL ? user.photoURL : userImg} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                     <div className="my-2 space-y-1">
@@ -51,7 +51,7 @@ const UpdateProfile = () => {
                     </div>
                 </div>
             </div>
-            <div className="my-12 animate__animated animate__slideInRight">
+            <div className="mx-auto my-12 animate__animated animate__slideInRight">
                 <p className="text-xl font-semibold text-center">Edit Profile</p>
                 <div className="mt-8">
                 <form onSubmit={handleUPdateProfile}>

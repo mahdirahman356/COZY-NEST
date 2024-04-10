@@ -41,10 +41,10 @@ const Context = ({children}) => {
                 {children}
             </AuthContext.Provider>
         </div>
-    );
-};
+    )
+}
 
 Context.propTypes ={
     children:PropTypes.node.isRequired
 }
-export default Context;
+export default Context

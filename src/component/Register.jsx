@@ -62,7 +62,7 @@ const Register = () => {
                     <input type="text" name="photoURL" placeholder="Photo URL" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" />
                     <input type="email" name="email" placeholder="Email" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2 mb-5" {...register("email", { required: true })} />
                     {errors.email && <span className="text-red-500 text-[13px]">This field is required</span>}
-                    <div className="flex relative">
+                    <div className="flex items-center relative">
                         <input type={show ? "text" : "password"} name="password" placeholder="password" className="rounded-none border-b-[1px] border-gray-300 w-full pb-2" {...register("password", { required: true })} />
                         {errors.email && <span className="text-red-500 text-[13px]">This field is required</span>}
                         <span onClick={() => setShow(!show)} className="absolute  right-2">{show ? <FiEye className="text-[20px] text-gray-500" /> : <FiEyeOff className="text-[20px] text-gray-500" />}</span >

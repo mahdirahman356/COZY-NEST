@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Categorys = ({ categorys }) => {
     let {id,estate_title,cardDecription, segment_name, img, price, status} = categorys
     return (
-        <div className='' data-aos="fade-up"
+        <div className='mb-10 md:mb-24' data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
             <div className="card  bg-base-100 shadow-xl">
                 <figure className="px-4 pt-7">
@@ -19,7 +19,7 @@ const Categorys = ({ categorys }) => {
                     <p className='font-semibold '>status: <span className='font-normal'>{status}</span></p>
                     </div>
                     <Link to={`/categorys/${id}`}>
-                    <button className="btn btn-primary w-full my-4">View Property</button>
+                    <button className="btn bg-[#64ade8] text-white w-full my-4">View Property</button>
                     </Link>
                    
                 </div>

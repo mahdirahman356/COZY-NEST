@@ -1,10 +1,11 @@
+import { BiBuildingHouse } from "react-icons/bi";
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content mt-16">
   <aside>
-    <p className="text-xl font-semibold footer-title">CozyNest</p>
+    <p className="text-xl font-semibold footer-title flex items-center"><BiBuildingHouse />  CozyNest</p>
     <p className="">Providing reliable tech since 1992</p>
   </aside> 
   <nav>
@@ -29,7 +30,7 @@ const Footer = () => {
   </nav>
 </footer>
         </div>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

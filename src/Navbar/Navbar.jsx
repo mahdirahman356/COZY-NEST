@@ -2,6 +2,8 @@ import { Link, NavLink} from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Context";
 import userImg from "../assets/Image/user-img.png"
+import { BiBuildingHouse } from "react-icons/bi";
+
 const Navbar = () => {
   let { user, logOutUser } = useContext(AuthContext)
   let handleLogout = () => {
@@ -14,8 +16,8 @@ const Navbar = () => {
       });
   }
   return (
-    <div className="navbar bg-base-100 md:mt-4">
-      <div className="navbar-start">
+    <div className=" bg-base-100 mt-4 flex justify-between items-center">
+      <div className="flex items-center">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -48,9 +50,9 @@ const Navbar = () => {
           </NavLink>
           </ul>
         </div>
-        <a className="text-xl md:text-3xl font-bold ml-2">CozyNest</a>
+        <a className="text-xl md:text-3xl font-bold ml-2 flex justify-end text-gray-600"><span className="text-[#78aeda] mt-1"><BiBuildingHouse /> </span><span className="text-[#66b0ec]">COZY</span>NEST</a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className=" hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8">
           <NavLink
             to="/"
@@ -79,7 +81,7 @@ const Navbar = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="flex items-center">
 
         {
           user ? <>
@@ -89,7 +91,7 @@ const Navbar = () => {
                   <li><a>{user.displayName}</a></li>
                 </ul>
                 </div>
-            <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8] text-white">Log Out</button>
+            <button onClick={handleLogout} className="btn ml-3 bg-[#64ade8]  text-white">Log Out</button>
           </>
             : <>
               <Link to="login"><button className="btn ml-3 bg-[#64ade8] text-white">Log in</button></Link>
