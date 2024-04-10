@@ -48,7 +48,7 @@ const Home = () => {
 
       </div>
       <div className='text-center mt-24'>
-        <p className='text-3xl font-bold mb-2'>Find Your Dream Home</p>
+        <p className='text-3xl md:text-4xl font-bold mb-2'>Find Your Dream Home</p>
         <p>Discover a variety of residential properties, from cozy homes to modern apartments. </p>
       </div>
       <div className='my-24'>
@@ -61,10 +61,8 @@ const Home = () => {
             ></Categorys>)
         }
       </div>
-      <div>
-        <Quality></Quality>
-      </div>
       <Features></Features>
+      <Quality></Quality>
     </div>
 
   );
