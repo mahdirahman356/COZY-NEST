@@ -56,11 +56,11 @@ const Login = () => {
         })
     }
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <Helmet>
                 <title>CozyNest | Login</title>
             </Helmet>
-      <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-5 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200 animate__animated animate__slideInLeft">
+      <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-10 bg-white w-[95%] md:w-[50%] lg:w-[40%]  my-5 md:my-20  mx-auto rounded-[5px]  border-2 border-gray-200">
            
            <h3 className="font-bold text-center text-2xl mb-5 md:text-3xl md:mb-12">Login Your Accout</h3>
 
@@ -74,7 +74,7 @@ const Login = () => {
          <Toaster />
           <p className="text-[14px] mt-3 font-semibold text-center">Dont’t Have An Account ? <Link to="/register" className="text-blue-600 underline">Register</Link></p>
       </form>
-      <div className="animate__animated animate__slideInRight">
+      <div className="">
       <button onClick={handleLoginWitnGoogle} className="btn w-full mb-3"><FcGoogle className="text-[30px]"/> Login With Google</button>
       <button onClick={handleLoginWithGithub} className="btn w-full"><span><FaGithub className="text-[30px] inline "/></span> Login With Github</button>
       </div>

@@ -13,7 +13,7 @@ const CategorysDetails = () => {
             <Helmet>
                 <title>CozyNest | Estate</title>
             </Helmet>
-            <div className="hero-content flex-col lg:flex-row" data-aos="zoom-out">
+            <div className="hero-content flex-col lg:flex-row" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <img src={img} className="md:max-w-2xl rounded-lg shadow-2xl" />
                 <div className="">
                     <h1 className="text-2xl font-bold">{estate_title}</h1>
