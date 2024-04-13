@@ -1,11 +1,16 @@
 import {useLoaderData} from "react-router-dom";
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
     let blogs =   useLoaderData();
     console.log(blogs)
     return (
         <div className="my-3 md:my-20">
+
+           <Helmet>
+                <title>CozyNest | Blog</title>
+            </Helmet>
             {blogs.map((blogs,index) => <div key={index} className="dark:text-gray-800 mb-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div className="container max-w-4xl p-2 md:px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-100">
                     <div className="flex items-center justify-between">
