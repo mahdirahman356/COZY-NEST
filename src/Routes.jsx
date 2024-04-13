@@ -44,7 +44,9 @@ const router = createBrowserRouter([
             {
                 path: "/blog",
                 loader: () => fetch("/Blogdata.json"),
-                element: <Blog></Blog>
+                element: <PrivetRoute>
+                    <Blog></Blog>
+                </PrivetRoute>
             }
         ]
     },

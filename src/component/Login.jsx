@@ -75,8 +75,8 @@ const Login = () => {
           <p className="text-[14px] mt-3 font-semibold text-center">Dont’t Have An Account ? <Link to="/register" className="text-blue-600 underline">Register</Link></p>
       </form>
       <div className="">
-      <button onClick={handleLoginWitnGoogle} className="btn w-full mb-3"><FcGoogle className="text-[30px]"/> Login With Google</button>
-      <button onClick={handleLoginWithGithub} className="btn w-full"><span><FaGithub className="text-[30px] inline "/></span> Login With Github</button>
+      <button onClick={handleLoginWitnGoogle} className="btn btn-outline w-full mb-3 border-[#64ade8] border-[1px] rounded-3xl"><FcGoogle className="text-[30px]"/> Login With Google</button>
+      <button onClick={handleLoginWithGithub} className="btn btn-outline w-full border-[#64ade8] border-[1px] rounded-3xl"><span><FaGithub className="text-[30px] inline "/></span> Login With Github</button>
       </div>
     </div>
 

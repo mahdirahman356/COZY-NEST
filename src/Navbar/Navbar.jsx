@@ -86,7 +86,7 @@ const Navbar = () => {
         {
           user ? <>
             <div className="dropdown dropdown-hover w-10 h-10 rounded-full flex justify-center items-center"> 
-                 <img tabIndex={0} className="rounded-full bg-gray-200" src={user.photoURL ? user.photoURL : userImg} />
+                 <img tabIndex={0} className="rounded-full bg-gray-200 w-10 h-10" src={user.photoURL ? user.photoURL : userImg} />
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box mt-24 w-52">
                   <li><a>{user.displayName}</a></li>
                 </ul>
